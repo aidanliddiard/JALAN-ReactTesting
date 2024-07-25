@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import { fetchFilms } from './services/getFilms'
-import ResultList from './components/ResultList';
+import LandingPage from './components/LandingPage';
 
 function App() {
   const [films, setFilms] = useState([]);
@@ -19,7 +18,7 @@ function App() {
 
   return (
     <>
-      <ResultList/>
+      <LandingPage/>
     </>
   )
 }
