@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import ResultList from "./ResultList";
-import { Film } from "../models/Film";
-import { fetchFilms, filterByTitle } from "../services/getFilms";
-import SearchFilm from "./SearchFilm";
-import Loading from "./Loading";
+import ResultList from "../ResultList";
+import { Film } from "../../models/Film";
+import { fetchFilms, filterByTitle } from "../../services/getFilms";
+import SearchFilm from "../SearchFilm";
+import Loading from "../Loading";
 
 const LandingPage: React.FC = () => {
     const [filmList, setFilmList] = useState<Film[] | null>([]);

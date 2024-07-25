@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css'
-import LandingPage from './components/LandingPage';
-import Placeholder from './components/Placeholder';
+import LandingPage from './components/views/LandingPage';
 import FilmDetail from './components/views/FilmDetail';
 
 function App() {
@@ -10,8 +9,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" Component={LandingPage}/>
-        <Route path="/movies" Component={Placeholder} />
-        <Route path="/movies/:id" Component={FilmDetail} />
+        <Route path="/:id" Component={FilmDetail} />
       </Routes>
     </Router>
   )

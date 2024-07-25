@@ -4,7 +4,6 @@ export const fetchFilms = async () => {
   const jsonResponse = await fetch(`https://ghibli-api.vercel.app/api/films`);
   const response = await jsonResponse.json();
   const films:Film[] = response.data;
-  console.log(films);
   return films;
 }
 
