@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css'
-import HelloWorld from './components/HelloWorld';
+import LandingPage from './components/LandingPage';
 import Placeholder from './components/Placeholder';
 import FilmDetail from './components/views/FilmDetail';
 
