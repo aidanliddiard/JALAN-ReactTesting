@@ -29,14 +29,14 @@ describe('Result List Tests', () => {
         }
     ]
     test('renders the correct number of ResultItem components', () => {
-        <BrowserRouter>
-            render(<ResultList films={films} />);
-        </BrowserRouter>
+            render(
+                <BrowserRouter>
+                    <ResultList films={films} />
+                </BrowserRouter>
+            );
         screen.debug();
-        const resultListItem = screen.getByText(/Castle in the Sky/i);
-        // const resultListItems = screen.getAllByRole('row');
-        expect(resultListItem).toBeInTheDocument();
-        // expect(resultListItems).toHaveLength(3);
-        
+        const resultListItems = screen.getAllByRole('row');
+        // expect(resultListItems[1]).
+        expect(resultListItems).toHaveLength(3);
     });
 })
