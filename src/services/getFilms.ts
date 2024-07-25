@@ -1,13 +1,17 @@
-export const fetchFilms = async () => {
-  const films = await fetch(`https://ghibli-api.vercel.app/api/films`);
-  const response = await films.json();
-  return response.data;
+import { Film } from "../models/Film";
 
+export const fetchFilms = async () => {
+  const jsonResponse = await fetch(`https://ghibli-api.vercel.app/api/films`);
+  const response = await jsonResponse.json();
+  const films:Film[] = response.data;
+  console.log(films);
+  return films;
 }
+
 export const fetchFilmById = async (id:string) => {
   const film = await fetch(`https://ghibli-api.vercel.app/api/films/${id}`);
   const response = await film.json();
-  return response.data;
+  return response.data as Film;
 }
 
 export const filterByTitle = async (query:string) => {
