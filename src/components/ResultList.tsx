@@ -10,6 +10,7 @@ interface ResultListProps {
 
 const ResultList: React.FC<ResultListProps> = ({films}) => {
     return (
+        films.length > 0 ? (
         <table>
             <thead>
                 <tr>
@@ -24,6 +25,8 @@ const ResultList: React.FC<ResultListProps> = ({films}) => {
                 ))}
             </tbody>
         </table>
+            ) : <p>No Results Found</p>
+
     );
 };
 
