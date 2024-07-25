@@ -1,21 +1,39 @@
 import React, { useState, useEffect } from "react";
-import ResultList, { Film } from "./ResultList";
+import ResultList from "./ResultList";
+import { Film } from "../models/Film";
 import { fetchFilms, filterByTitle } from "../services/getFilms";
+import SearchFilm from "./SearchFilm";
+import Loading from "./Loading";
 
 const LandingPage: React.FC = () => {
-    const [filmList, setFilmList] = useState<Film[]>([]);
+    const [filmList, setFilmList] = useState<Film[] | null>([]);
+    const [search, setSearch] = useState("");
 
     useEffect(() => {
         const fetchFilmData = async () => {
-          const resp = await fetchFilms();
-          setFilmList(resp);
+        let resp;
+        if (!search){
+            resp = await fetchFilms();
+            
+        } else {
+            resp = await filterByTitle(search);
+        }
+        setFilmList(resp);
         };
         fetchFilmData();
-      }, [])
+      }, [search])
+
+      if (!filmList) {
+        return <Loading size={65} speed={1.5} color="blue" />;
+      }
 
 
     return(
-    <ResultList films = {filmList}/>
+        <>
+            <SearchFilm setSearch = {setSearch}/>
+            <ResultList films = {filmList}/>
+        </>
+
     )
 }
 

@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 
 interface SearchFilmProps {
-    searchFilm: (text: string) => void;
+    setSearch: (text: string) => void;
 }
 
-const SearchFilm: React.FC<SearchFilmProps> = ({ searchFilm }) => {
+const SearchFilm: React.FC<SearchFilmProps> = ({ setSearch }) => {
     const [inputValue, setInputValue] = useState('');
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (inputValue.trim()) {
-            searchFilm(inputValue);
+            setSearch(inputValue);
             setInputValue('');
         }
     };

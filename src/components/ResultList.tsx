@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { fetchFilms } from "../services/getFilms";
+import React from "react";
 import ResultItem from "./ResultItem";
+import { Film } from "../models/Film";
 
-export interface Film {
-    id: string;
-    title: string;
-    release_date: number;
-}
 
-export interface ResultListProps {
+interface ResultListProps {
     films: Film[]
 }
 
