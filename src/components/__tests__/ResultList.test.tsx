@@ -28,7 +28,7 @@ describe('Result List Tests', () => {
             movie_banner: "https://image.tmdb.org/t/p/original/hjlvbMKhQm7N8tYynr8yQ8GBmqe.jpg"
         }
     ]
-    test('renders the correct number of ResultItem components', () => {
+    test('should render the correct number of ResultItem components', () => {
             render(
                 <BrowserRouter>
                     <ResultList films={films} />
@@ -38,5 +38,15 @@ describe('Result List Tests', () => {
         const resultListItems = screen.getAllByRole('row');
         // expect(resultListItems[1]).
         expect(resultListItems).toHaveLength(3);
+    });
+    test('should render an error message to the user when nothing found', () => {
+        const emptyArr:Film[] = [];
+        render(
+            <BrowserRouter>
+                <ResultList films={emptyArr} />
+            </BrowserRouter>
+        );
+        const resultListItem = screen.getByText('No Results Found');
+        expect(resultListItem).toBeInTheDocument()
     });
 })
