@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" Component={HelloWorld}/>
+        <Route path="/" Component={LandingPage}/>
         <Route path="/movies" Component={Placeholder} />
         <Route path="/movies/:id" Component={FilmDetail} />
       </Routes>
