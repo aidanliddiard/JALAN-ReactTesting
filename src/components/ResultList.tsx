@@ -8,8 +8,6 @@ interface ResultListProps {
 }
 
 const ResultList: React.FC<ResultListProps> = ({films}) => {
-
-    
     return (
         <table>
             <thead>
@@ -20,7 +18,7 @@ const ResultList: React.FC<ResultListProps> = ({films}) => {
             </thead>
             <tbody>
                 {films.map((film) => (
-                    <ResultItem id={film.id} title={film.title} release_date={film.release_date}/>
+                    <ResultItem key={film.id} id = {film.id}title={film.title} release_date={film.release_date}/>
                 ))}
             </tbody>
         </table>
