@@ -30,6 +30,9 @@ describe("Film card tests", () => {
     const title = screen.getByRole("heading", { level: 1 });
     expect(title).toHaveTextContent("Castle in the Sky");
 
+    const headings = screen.getAllByRole("heading");
+    expect(headings.length).toBe(3);
+
     const img = screen.getAllByRole("img");
     expect(img.length).toBe(2);
   });
