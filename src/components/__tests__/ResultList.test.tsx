@@ -34,7 +34,7 @@ describe('Result List Tests', () => {
                     <ResultList films={films} />
                 </BrowserRouter>
             );
-        screen.debug();
+        // screen.debug();
         const resultListItems = screen.getAllByRole('row');
         // expect(resultListItems[1]).
         expect(resultListItems).toHaveLength(3);
