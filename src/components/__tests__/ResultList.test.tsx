@@ -34,6 +34,7 @@ describe('Result List Tests', () => {
                     <ResultList films={films} />
                 </BrowserRouter>
             );
+
         const resultListItems = screen.getAllByRole('row');
         expect(resultListItems[1]).toHaveTextContent("Castle in the Sky");
         expect(resultListItems[1]).toHaveTextContent("1986");
