@@ -34,9 +34,12 @@ describe('Result List Tests', () => {
                     <ResultList films={films} />
                 </BrowserRouter>
             );
-        // screen.debug();
+
         const resultListItems = screen.getAllByRole('row');
-        // expect(resultListItems[1]).
+        expect(resultListItems[1]).toHaveTextContent("Castle in the Sky");
+        expect(resultListItems[1]).toHaveTextContent("1986");
+        expect(resultListItems[2]).toHaveTextContent("Howl's Moving Castle");
+        expect(resultListItems[2]).toHaveTextContent("2004");
         expect(resultListItems).toHaveLength(3);
     });
     test('should render an error message to the user when nothing found', () => {
