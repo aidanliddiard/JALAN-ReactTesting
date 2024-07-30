@@ -20,3 +20,9 @@ export const filterByTitle = async (query:string) => {
   )
   return filteredFilms;
 }
+
+export const fetchShowtimes = async () => {
+  const showtimes = await fetch(`http://localhost:5000/showtimes`);
+  const response = await showtimes.json();
+  return response.data;
+}
