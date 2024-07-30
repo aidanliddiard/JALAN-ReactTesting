@@ -1,0 +1,22 @@
+{
+    "showtimes": [
+        {
+            "id": 1,
+            "movie_name": "Ponyo",
+            "theater_name": "AMC",
+            "showtime": "2021-09-01T10:00:00Z"
+        },
+        {
+            "id": 2,
+            "movie_name": "Howl's Moving Castle",
+            "theater_name": "Cinemark",
+            "showtime": "2021-09-01T13:00:00Z"
+        },
+        {
+            "id": 3,
+            "movie_name": "Spirited Away",
+            "theater_name": "Alamo Drafthouse",
+            "showtime": "2021-09-01T16:00:00Z"
+        }
+    ]
+}
