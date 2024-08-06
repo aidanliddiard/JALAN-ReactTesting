@@ -11,6 +11,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "@aws-amplify/auth": "^6.3.12",
+    "@aws-amplify/ui-react": "^6.1.14",
+    "aws-amplify": "^6.4.4",
+    "axios": "^1.7.3",
     "ldrs": "^1.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

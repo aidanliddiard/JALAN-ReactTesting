@@ -3,10 +3,12 @@ import './App.css'
 import LandingPage from './components/views/LandingPage';
 import FilmDetail from './components/views/FilmDetail';
 import ShowtimesList from './components/ShowtimesList';
+import { Authenticator } from '@aws-amplify/ui-react';
 
 function App() {
 
   return (
+    <Authenticator>
     <Router>
       <Routes>
         <Route path="/" Component={LandingPage}/>
@@ -14,6 +16,7 @@ function App() {
         <Route path="/showtimes" Component={ShowtimesList} />
       </Routes>
     </Router>
+    </Authenticator>
   )
 }
 

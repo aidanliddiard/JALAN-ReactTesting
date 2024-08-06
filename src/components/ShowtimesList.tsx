@@ -6,7 +6,7 @@ const ShowtimesList: React.FC = () => {
 
     useEffect(() => {
         const fetchShowtimes = async () => {
-            const showtimes = await fetch(`http://localhost:5000/showtimes`);
+            const showtimes = await fetch(`https://uo1xvd2akk.execute-api.us-east-2.amazonaws.com/dev/api/showtimes`);
             const response = await showtimes.json();
             console.log(response);
             setShowtimes(response);
